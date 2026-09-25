@@ -1,0 +1,2 @@
+[console_scripts]
+megacorpone-sync = megacorpone_ai_toolkit.sync:main

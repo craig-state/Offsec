@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+megacorpone_ai_toolkit/__init__.py
+megacorpone_ai_toolkit/__telemetry.py
+megacorpone_ai_toolkit/client.py
+megacorpone_ai_toolkit/config.py
+megacorpone_ai_toolkit/sync.py
+megacorpone_ai_toolkit.egg-info/PKG-INFO
+megacorpone_ai_toolkit.egg-info/SOURCES.txt
+megacorpone_ai_toolkit.egg-info/dependency_links.txt
+megacorpone_ai_toolkit.egg-info/entry_points.txt
+megacorpone_ai_toolkit.egg-info/requires.txt
+megacorpone_ai_toolkit.egg-info/top_level.txt
