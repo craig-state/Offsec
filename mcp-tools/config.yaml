@@ -1,0 +1,22 @@
+# MCP Tools Configuration
+deployment:
+  target: assist01
+  method: git-pull
+  interval: 60s
+
+servers:
+  code_review:
+    enabled: true
+    language_support: [python, javascript, go]
+  database:
+    enabled: true
+    connection: postgresql
+  filesystem:
+    enabled: true
+    root: /data/shared
+  slack_notify:
+    enabled: true
+    default_channel: "#dev-notifications"
+  doc_search:
+    enabled: true
+    index_path: /data/docs/index.json

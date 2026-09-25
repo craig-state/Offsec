@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "biotools": {
+            "command": "C:\\Python311\\python.exe",
+            "args": ["C:\\Users\\nina.seyfried\\mcp-servers\\mcp-biotools\\server.py"],
+            "env": {
+                "BIOTOOLS_LOG_LEVEL": "WARNING"
+            }
+        }
+    }
+}
