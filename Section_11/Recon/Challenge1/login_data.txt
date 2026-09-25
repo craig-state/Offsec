@@ -1,0 +1,19 @@
+SQLite format @  
+�                .v��
+����;last_compatible_version40
+                              ersion43#mmap_status-1
+����last_compatible_version
+��https://gitlab01.megacorpone.com/https://gitlab01.megacorpone.com/users/sign_inuser[login]e.smithuser[password]v20P�D
+�K���con�<n5��w�K��␦�DrOT�*���
+                              J)@ozN���https://gitlab01.megacorpone.com//m��`/m��`/m��`
+��iO#	https://logins01.megacorpone.com/user[login]e.smithuser[password]https://gitlab01.megacorpone.com/
+��$O	https://gitlab01.megacorpone.com/
+:g�:�^���G
+[5indexsqlite_a�3�AtableloginsloginsCREATE TABLE logins (origin_url VARCHAR NOT NULL, action_url VARCHAR, username_element VARCHAR, username_value VARCHAR, password_element VARCHAR, password_value BLOB, submit_element VARCHAR, signon_realm VARCHAR NOT NULL, date_created INTEGER NOT NULL, blacklisted_by_user INTEGER NOT NULL, scheme INTEGER NOT NULL, password_type INTEGER, times_used INTEGER, form_data BLOB, display_name VARCHAR, icon_url VARCHAR, federation_url VARCHAR, skip_zero_click INTEGER, generation_upload_status INTEGER, possible_username_pairs BLOB, id INTEGER PRIMARY KEY AUTOINCREMENT, date_last_used INTEGER NOT NULL DEFAULT 0, moving_blocked_for BLOB, date_password_modified INTEGER NOT NULL DEFAULT 0, sender_email VARCHAR, sender_name VARCHAR, date_received INTEGER, sharing_notification_displayed INTEGER NOT NULL DEFAULT 0, keychain_identifier BLOB, sender_profile_image_url VARCHAR, date_last_filled INTEGER NOT NULL DEFAULT 0, actor_login_approved INTEGER NOT NULL DEFAULT 0, UNIQUE (origin_url, username_element, username_value, password_element, signon_realm))�-f�/tablemetametaCREATE TABLE meta(key LONGVARCHAR NOT NULL UNIQUE P�V��-��\�Y, value LONGVARCHAR)';indexsqlite_autoindex_meta_1meta
+X��iVN%oindexstats_originstatsCREATE INDEX stats_origin ON stats(origin_domain)�@�_tablestatsstatsCREATE TABLE stats (origin_domain VARCHAR NOT NULL, username_value VARCHAR, dismissal_count INTEGER, update_time INTEGER NOT NULL, UNIQUE(origin_domain, username_value)))=indexsqlite_autoindex_stats_1statst;)�indexforeign_key_index_notespassword_notesCREATE INDEX foreign_key_index_notes ON password_notes (parent_id)�K
+                                                                                       ))�Qtablepassword_notespassword_notesCREATE TABLE password_notes (id INTEGER PRIMARY KEY AUTOINCREMENT, parent_id INTEGER NOT NULL REFERENCES logins ON UPDATE CASCADE ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED, key VARCHAR NOT NULL, valueO)indexsqlite_autoindex_password_notes_1password_notetEGER, UNIQUE (parent_id, key));
+                                                      /5�indexforeign_key_indexinsecure_credentialsCREATE INDEX foreign_key_index ON insecure_credentials (parent_id)G
+[5indexsqlite_autoindex_insecure_credentials_1insecure_credentials
+                                                                  �	55�/tableinsecure_credentialsinsecure_credentials
+CREATE TABLE insecure_credentials (parent_id INTEGER REFERENCES logins ON UPDATE CASCADE ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED, insecurity_type INTEGER NOT NULL, create_time INTEGER NOT NULL, is_muted INTEGER NOT NULL DEFAULT 0, trigger_notification_from_backend INTEGER NOT NULL DEFAULT 0, UNIQUE (parent_id, insecurity_type))3�]tablesync_model_metadatasync_model_metadata	CREATE TABLE sync_model_metadata (id INTEGER PRIMARY KEY AUTOINCREMENT, model_metadata VARCHAR NOT NULL)�'99�itablesync_entities_metadatasync_entities_metadatCREATE TABLE sync_entities_metadata (storage_key INTEGER PRIMARY KEY AUTOINCREMENT, metadata VARCHAR NOT NULL)R'sindexlogins_signonloginsCREATE INDEX logins_signon ON logins (signon_realm)P++Ytablesqlite_sequencesqlite_sequenceCREATE TABLE sqlite_sequence(name,seq)+?indexsqlite_autoindex_logins_1logins
+

