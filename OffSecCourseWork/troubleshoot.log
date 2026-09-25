@@ -1,0 +1,142 @@
+
+==== Troubleshooting Session ====
+LDAP Username: No active VPN
+Username: kali
+
+Date: 2026-08-25 15:05:20
+
+
+==== Virtual Machine Check ====
+
+VM Check: VM not detected! We highly recommend you use Kali VM within the VMware. Check our guide: https://help.offensive-security.com/hc/en-us/articles/360049796792-Kali-Linux-Virtual-Machine
+
+
+==== VPN Status ====
+
+VPN Check: Connected!
+
+
+==== Network Interface ====
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.20.10.9  netmask 255.255.255.240  broadcast 172.20.10.15
+        inet6 2600:1010:b169:f8f7:45a2:4f7b:e6eb:80f5  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::a4e:d664:8d93:b5ef  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:5a:87:bc  txqueuelen 1000  (Ethernet)
+        RX packets 961  bytes 772332 (754.2 KiB)
+        RX errors 91  dropped 0  overruns 0  frame 91
+        TX packets 1019  bytes 147522 (144.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8  bytes 480 (480.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 480 (480.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+tun0: flags=4305<UP,POINTOPOINT,RUNNING,NOARP,MULTICAST>  mtu 1500
+        inet 192.168.45.205  netmask 255.255.255.0  destination 192.168.45.205
+        inet6 fe80::1074:70f6:b079:3677  prefixlen 64  scopeid 0x20<link>
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 500  (UNSPEC)
+        RX packets 10  bytes 840 (840.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 18  bytes 1260 (1.2 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+
+==== Network Routes ====
+default via 192.168.45.1 dev tun0 proto static metric 50 
+default via 172.20.10.1 dev eth0 proto dhcp src 172.20.10.9 metric 100 
+142.44.251.218 via 172.20.10.1 dev eth0 proto static metric 50 
+172.20.10.0/28 dev eth0 proto kernel scope link src 172.20.10.9 metric 100 
+172.20.10.1 dev eth0 proto static scope link metric 50 
+192.168.45.0/24 dev tun0 proto kernel scope link src 192.168.45.205 metric 50 
+192.168.139.0/24 via 192.168.45.254 dev tun0 proto static metric 50 
+
+No duplicate routes found :)
+
+Interface tun0
+eth0 is down
+
+
+==== UDP Port Test ====
+
+UDP 1194: Reachable
+
+
+==== Kernel Version ====
+
+Kernel: 7.0.12+kali-amd64
+
+
+==== Operating System ====
+Distributor ID:	Kali
+Description:	Kali GNU/Linux Rolling
+Release:	2026.3
+Codename:	kali-rolling
+
+
+==== DNS Information ====
+
+DNS Check: 8.8.8.8 configured
+
+
+==== Ping Test 8.8.8.8 and Google ====
+
+
+[i] Ping Test (External: 8.8.8.8)
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+From 192.168.45.254 icmp_seq=1 Destination Net Unreachable
+From 192.168.45.254 icmp_seq=2 Destination Net Unreachable
+From 192.168.45.254 icmp_seq=3 Destination Net Unreachable
+From 192.168.45.254 icmp_seq=4 Destination Net Unreachable
+
+--- 8.8.8.8 ping statistics ---
+20 packets transmitted, 0 received, +4 errors, 100% packet loss, time 19481ms
+
+
+
+[i] Ping Test (External: www.google.com)
+ping: google.com: Temporary failure in name resolution
+
+
+==== External IP & Location ====
+
+[!] Failed to retrieve external IP. Check your connection.
+
+[!] Failed to retrieve region. Check your connection.
+
+[!] Failed to check proxy. Check your connection.
+
+
+==== Informative summary ====
+[36mUser                      : kali[0m
+[36mDate                      : August 25, 2026 15:05:20[0m
+[31mVM Check                  : VM not detected! We highly recommend you use Kali VM within the VMware. Check our guide: https://help.offensive-security.com/hc/en-us/articles/360049796792-Kali-Linux-Virtual-Machine[0m
+[32mVPN Check                 : Connected![0m
+[32mUDP 1194                  : Reachable[0m
+[36mKernel                    : 7.0.12+kali-amd64[0m
+[36mOperating System          : Kali GNU/Linux Rolling[0m
+[32mDNS check                 : 8.8.8.8 DNS is set properly[0m
+[31m
+Pinging 8.8.8.8           : (Avg 9999 ms, 100%% loss)
+                            Your latency may cause issues when using the VPN.
+                            Please consider using Kali-in-Browser.
+                            URL: https://help.offsec.com/hc/en-us/articles/9550819362964-Connectivity-Guide#h_01J4S77TGKA3EFJNXG66MDA4ZS[0m
+
+[31m
+Pinging google.com        : (Avg 9999 ms, 100%% loss)
+                            Your latency may cause issues when using the VPN.
+                            Please consider using Kali-in-Browser.
+                            URL: https://help.offsec.com/hc/en-us/articles/360055974671-What-is-in-browser-Kali-Linux[0m
+
+[31mExternal IP               : Not found![0m
+[32mFirewall check            : All good. Your VPN connection should work normally.[0m
+[31mCheck proxy               : Failed to check proxy. Check your internet connection.[0m
+
+
+==== Final result ====
+[x] Issues detected – please review the summary above.
