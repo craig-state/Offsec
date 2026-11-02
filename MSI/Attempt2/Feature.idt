@@ -1,0 +1,3 @@
+Feature	Feature_Parent	Title	Description	Display	Level	Directory_
+s38	s38	S255	L255	i2	i2	s72
+MainFeature		Main Application	Installs the main application	2	1	INSTALLDIR

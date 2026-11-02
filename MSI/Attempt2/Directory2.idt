@@ -1,0 +1,6 @@
+Directory	Directory_Parent	DefaultDir
+s72	s72	l255
+Directory	Directory
+TARGETDIR		SourceDir
+ProgramFilesFolder	TARGETDIR	.
+INSTALLDIR	ProgramFilesFolder	My Application

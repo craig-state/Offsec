@@ -1,0 +1,4 @@
+Directory	Directory_Parent	DefaultDir
+TARGETDIR		SourceDir
+ProgramFilesFolder	TARGETDIR	ProgramFilesFolder
+INSTALLDIR	ProgramFilesFolder	AddAdminUser

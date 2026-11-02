@@ -1,0 +1,18 @@
+Property	Value
+s72	l0
+Property	Property
+ALLUSERS	1
+ARPURLINFOABOUT	https://wixtoolset.org/
+ARPHELPLINK	https://wixtoolset.org/docs/gethelp/
+PackageId	WixToolset.CommandLineTools7.Package
+Manufacturer	WiX Toolset
+ProductCode	{FEEA287E-456E-4CD8-B168-6F85652232B8}
+ProductLanguage	1033
+ProductName	WiX Toolset Command-Line Tools
+ProductVersion	7.0.0.0
+UpgradeCode	{3BA538C0-CCFA-55CC-8001-896D7D1B2FAB}
+DefaultUIFont	WixUI_Font_Normal
+ARPNOMODIFY	1
+ErrorDialog	ErrorDlg
+WixUIRMOption	UseRM
+SecureCustomProperties	BURNMSIMODIFY;BURNMSIREPAIR;BURNMSIUNINSTALL;WIX_DOWNGRADE_DETECTED;WIX_UPGRADE_DETECTED

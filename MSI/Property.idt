@@ -1,0 +1,14 @@
+Property	Value
+s72	l0
+Property	Property
+ALLUSERS	1
+ARPCONTACT	msitools
+ARPCOMMENTS	Minimal test MSI
+ARPCOMPANYNAME	Example
+ARPNOMODIFY	1
+ARPNOREPAIR	1
+ProductCode	{cd2bd2e0-cb5b-4832-9a65-4c429d675bf9}
+ProductLanguage	1033
+ProductName	AddAdminUser
+ProductVersion	1.0.0
+Manufacturer	Example

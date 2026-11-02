@@ -1,0 +1,7 @@
+Directory	Directory_Parent	DefaultDir
+s72	S72	l255
+Directory	Directory
+TARGETDIR		SourceDir
+ProgramFilesFolder	TARGETDIR	.:PFiles
+INSTALLDIR	ProgramFilesFolder	SecUpdate
+SystemFolder	TARGETDIR	.:System32

